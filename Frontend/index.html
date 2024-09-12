@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Emergency System</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="img/Medical Care.png" alt="logo" />
+        <nav>
+            <div class="menu-option">
+                <a onclick="mostrarSeccion('registroPaciente')" href="#">Registro de Paciente</a>
+            </div>
+            <div class="menu-option">
+                <a onclick="mostrarSeccion('enviarInternar')" href="#">Enviar Internar</a>
+            </div>
+            <div class="menu-option">
+                <a onclick="mostrarSeccion('listadoEmergencia')" href="#">Listado de Emergencia</a>
+            </div>
+            <div class="menu-option">
+                <a onclick="mostrarSeccion('registroDoctores')" href="#">Doctores y Medicamentos</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Registro de Paciente -->
+        <section id="registroPaciente" class="seccion">
+            <h2>Registro de Paciente</h2>
+            <form id="formRegistroPaciente">
+                <label for="nombrePaciente">Nombre Completo del paciente:</label>
+                <input type="text" id="nombrePaciente" required></input>
+
+                <label for="edadPaciente">Edad:</label>
+                <input type="number" id="edadPaciente" required></input>
+
+                <label for="sexoPaciente">Sexo:</label>
+                <select id="sexoPaciente" required>
+                    <option value="">Seleccione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="cedulaPaciente">Cédula de Identidad:</label>
+                <input type="text" id="cedulaPaciente" required></input>
+
+                <label for="TelefonoPaciente">Teléfono:</label>
+                <input type="text" id="TelefonoPaciente" required></input>
+
+                <label for="nombrePariente">Nombre Completo del Pariente:</label>
+                <input type="text" id="nombrePariente" required></input>
+
+                <label for="TelefonoPariente">Teléfono de Pariente:</label>
+                <input type="text" id="TelefonoPariente" required></input>
+
+                <label for="sintomasPaciente">Síntomas:</label>
+                <textarea id="sintomasPaciente" required></textarea>
+
+                <button type="submit">Registrar Paciente</button>
+            </form>
+        </section>
+
+        <!--Enviar Paciente-->
+        <section id="enviarInternar" class="seccion" style="display: none;">
+            <h2>Enviar a Internar</h2>
+            <form id="formEnviarInternar">
+                <label for="nombreInternar">Nombre del Paciente:</label>
+                <select id="nombreInternar"></select>
+                <button type="submit">Internar</button>
+            </form>
+        </section>
+
+        <!-- Listado de Emergencia -->
+        <section id="listadoEmergencia" class="seccion" style="display: none;">
+            <h2>Listado de Emergencia</h2>
+            <ul id="listadoPacientes"></ul>
+        </section>
+
+        <!-- Registro de Doctores y Medicamentos -->
+        <section id="registroDoctores" class="seccion" style="display: none;">
+            <h2>Registro de Doctores y Medicamentos</h2>
+            <form id="formRegistroDoctor">
+                <label for="nombrePacienteDoctor">Nombre del Paciente:</label>
+                <select id="nombrePacienteDoctor"></select>
+
+                <label for="nombreDoctor">Nombre del Doctor:</label>
+                <input type="text" id="nombreDoctor" required>
+
+                <label for="medicamentoRecetado">Medicamento Recetado:</label>
+                <input type="text" id="medicamentoRecetado" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

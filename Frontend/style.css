@@ -1,0 +1,110 @@
+* {
+    box-sizing: content-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    height: 100px;
+    padding: 0px 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border: 1px solid #5e5a5a;
+}
+
+header .logo {
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+}
+
+nav .menu-option {
+    font-size: 14px;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+nav .menu-option a {
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav .menu-option a:hover {
+    background-color: #008cba;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+.seccion {
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+textarea,
+select,
+button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #008cba;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    color: white;
+    background-color: #005f73;
+}

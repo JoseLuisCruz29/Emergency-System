@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Rosa",
+    "edad": "22",
+    "sintomas": "Cancer",
+    "internado": true,
+    "doctores": [
+      "Manuelo"
+    ],
+    "medicamentos": [
+      "Paracetamol"
+    ]
+  },
+  {
+    "nombre": "Jose Luis",
+    "edad": "12",
+    "sintomas": "Gripe",
+    "internado": true,
+    "doctores": [
+      "Manuel"
+    ],
+    "medicamentos": [
+      "Paracetamol"
+    ]
+  }
+]

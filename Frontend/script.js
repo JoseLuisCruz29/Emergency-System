@@ -173,43 +173,34 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
-document.getElementById('cedulaPaciente').addEventListener('input', function (event) {
-    let input = event.target;
-    let value = input.value.replace(/\D/g, ''); // Quitar todos los caracteres no numéricos
-
-    // Limitar la longitud del valor a 11 dígitos
-    if (value.length > 11) {
+// Función de formateo genérica para cédula y teléfono
+function formatearInput(input, tipo) {
+    let value = input.value.replace(/\D/g, '');  // Quitar todos los caracteres no numéricos
+    if (tipo === 'cedula' && value.length > 11) {
         value = value.substring(0, 11);
-    }
-
-    // Formatear el valor
-    let formattedValue = value
-        .replace(/(\d{3})(\d{0,7})/, '$1-$2')  // Primer grupo de 3 dígitos y segundo grupo de 7 dígitos
-        .replace(/(\d{7})(\d{0,1})/, '$1-$2'); // Segundo grupo de 7 dígitos y dígito final
-
-    input.value = formattedValue;
-});
-
-function guion(input) {
-    let value = input.value.replace(/\D/g, ''); // Quitar todos los caracteres no numéricos
-
-    // Limitar la longitud del valor a 10 dígitos
-    if (value.length > 10) {
+    } else if (tipo === 'telefono' && value.length > 10) {
         value = value.substring(0, 10);
     }
 
-    // Formatear el valor
-    let formattedValue = value
-        .replace(/(\d{3})(\d{0,3})/, '($1) $2')  // Primer grupo de 3 dígitos y segundo grupo de 7 dígitos
-        .replace(/(\d{3})(\d{3,4})/, '$1-$2'); // Segundo grupo de 7 dígitos y dígito final
+    if (tipo === 'cedula') {
+        input.value = value
+            .replace(/(\d{3})(\d{0,7})/, '$1-$2')
+            .replace(/(\d{7})(\d{0,1})/, '$1-$2');
+    } else if (tipo === 'telefono') {
+        input.value = value
+            .replace(/(\d{3})(\d{0,3})/, '($1) $2')
+            .replace(/(\d{3})(\d{3,4})/, '$1-$2');
+    }
+}
 
-    input.value = formattedValue;
-};
-document.getElementById('TelefonoPariente').addEventListener('input', function (event) {
-    let input = event.target;
-    guion(input)
-})
+document.getElementById('cedulaPaciente').addEventListener('input', function (event) {
+    formatearInput(event.target, 'cedula');
+});
+
 document.getElementById('TelefonoPaciente').addEventListener('input', function (event) {
-    let input = event.target;
-    guion(input)
-})
+    formatearInput(event.target, 'telefono');
+});
+
+document.getElementById('TelefonoPariente').addEventListener('input', function (event) {
+    formatearInput(event.target, 'telefono');
+});
